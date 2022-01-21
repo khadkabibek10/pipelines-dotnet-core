@@ -20,7 +20,9 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'secure_file'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
